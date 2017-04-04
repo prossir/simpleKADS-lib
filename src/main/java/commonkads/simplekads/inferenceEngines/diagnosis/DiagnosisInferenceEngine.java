@@ -1,4 +1,4 @@
-package commonkads.simplekads.inferenceEngines.classification;
+package commonkads.simplekads.inferenceEngines.diagnosis;
 
 
 import java.io.BufferedReader;
@@ -10,16 +10,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import commonkads.simplekads.ontologyAccessManager.classification.ClasifyOntologyAccess;
+import commonkads.simplekads.ontologyAccessManager.diagnosis.DiagnosisOntologyAccess;
 
-public class ClasifyInferenceEngine {
+public class DiagnosisInferenceEngine {
 	private static List<String> differential = new ArrayList<String>();
 	private static Map<String, Boolean> evidence = new HashMap<String, Boolean>();
 	private static Map<String, List<String>> symptomsStructure = new HashMap<String, List<String>>();
 	private static Map<String, Integer> symptomsCounter = new HashMap<String, Integer>();
 
 	private static List<String> cover(String symptomName) {
-		return ClasifyOntologyAccess.getDiseases(symptomName);
+		return DiagnosisOntologyAccess.getDiseases(symptomName);
 	}
 
 	public static List<String> diagnose(String symptomName) {
@@ -183,7 +183,7 @@ public class ClasifyInferenceEngine {
 			for (Iterator<String> iter = differential.iterator(); iter
 					.hasNext();) {
 				String hypothesis = iter.next();
-				symptoms = ClasifyOntologyAccess.getSymptoms(hypothesis);
+				symptoms = DiagnosisOntologyAccess.getSymptoms(hypothesis);
 				symptomsStructure.put(hypothesis, symptoms);
 				for (Iterator<String> jter = symptoms.iterator(); jter
 						.hasNext();) {

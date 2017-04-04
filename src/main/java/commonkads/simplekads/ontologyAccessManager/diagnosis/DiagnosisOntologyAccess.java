@@ -1,4 +1,4 @@
-package commonkads.simplekads.ontologyAccessManager.classification;
+package commonkads.simplekads.ontologyAccessManager.diagnosis;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import org.apache.jena.reasoner.Reasoner;
 import org.apache.jena.reasoner.ReasonerRegistry;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
-public class ClasifyOntologyAccess {
+public class DiagnosisOntologyAccess {
 	private static String nameSpace = "";
 	private static Model model = ModelFactory.createOntologyModel();
 	private static OntModel ontModel = null;
