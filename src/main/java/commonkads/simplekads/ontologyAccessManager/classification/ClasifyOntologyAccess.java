@@ -27,7 +27,7 @@ public class ClasifyOntologyAccess {
 	private static Model model = ModelFactory.createOntologyModel();
 	private static OntModel ontModel = null;
 
-	public static void printIndividuals(String ontClassName) {
+	public static void printClassMembers(String ontClassName) {
 		OntClass ontClass = ontModel.getOntClass(nameSpace + ontClassName);
 		ExtendedIterator<? extends OntResource> individuals = ontClass
 				.listInstances();
@@ -37,7 +37,7 @@ public class ClasifyOntologyAccess {
 		}
 	}
 
-	public static ExtendedIterator<? extends OntResource> getIndividuals(
+	public static ExtendedIterator<? extends OntResource> getClassMembers(
 			String ontClassName) {
 		OntClass ontClass = ontModel.getOntClass(nameSpace + ontClassName);
 		ExtendedIterator<? extends OntResource> individuals = ontClass
